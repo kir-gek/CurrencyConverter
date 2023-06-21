@@ -23,6 +23,26 @@ struct СurrencyValue: Codable {
     let Value: Double
 }
 
+struct TabVc: View {
+    @State private var selectedTab = 1
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            ContentView().tabItem {
+                Image(systemName: "doc")
+                Text("List")
+            }
+            .tag(0)
+            
+            ConverterVC().tabItem {
+                Image(systemName: "square.and.pencil")
+                Text("Converter")
+            }
+            .tag(1)
+        }
+    }
+}
+
 struct ContentView: View {
     
     @State private var convertedAmount: String = ""
@@ -161,6 +181,6 @@ struct PopupView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TabVc()
     }
 }

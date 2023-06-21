@@ -11,7 +11,8 @@ import SwiftUI
 struct CurrencyConverterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabVc()
+            
         }
     }
 }
